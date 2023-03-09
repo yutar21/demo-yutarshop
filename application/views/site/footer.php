@@ -26,7 +26,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="<?php echo base_url(); ?>" style="pointer-events: none;padding: 10px;background-color: white"><img src="<?php echo base_url(); ?>upload/Yutar11.png" alt="" class="img-responsive"></a>
+                        <a href="<?php echo base_url(); ?>" style="pointer-events: none;padding: 10px;background-color: white"><img src="<?php echo base_url(); ?>upload/logo.png" alt="" class="img-responsive"></a>
                     </div>
                     <p>Khách hàng là trọng tâm của mô hình kinh doanh độc đáo của chúng tôi, bao gồm cả thiết kế.</p>
                     <a href="#"><img src='<?php echo base_url('upload/payment.png'); ?>'></a>
@@ -34,7 +34,7 @@
             </div>
             <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h6>Yutar Shopping</h6>
+                    <h6>yutar Shopping</h6>
                     <ul>
                         <li><a href="<?php echo base_url('moi'); ?>">Mới</a></li>
                         <li><a href="<?php echo base_url('ban-chay'); ?>">Bán Chạy</a></li>
@@ -45,7 +45,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h6>Yutar SHOP</h6>
+                    <h6>yutar SHOP</h6>
                     <ul>
                         <li><a href="#">Liên hệ với chúng tôi</a></li>
                         <li><a href="#">Phương thức thanh toán</a></li>
@@ -74,7 +74,7 @@
                         <script>
                             document.write(new Date().getFullYear());
                         </script>
-                        All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" >Yutar</a>
+                        All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" >Nhóm 18</a>
                     </p>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>

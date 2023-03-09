@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse re-navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li><a href="<?php echo base_url(); ?>" style="pointer-events: none"><img src="<?php echo base_url(); ?>upload/Yutar11.png" alt="" class="img-responsive"></a></li>
+                    <li><a href="<?php echo base_url(); ?>" style="pointer-events: none"><img src="<?php echo base_url(); ?>upload/logo.png" alt="" class="img-responsive"></a></li>
                     <li class="active"><a href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME<span class="sr-only">(current)</span></a></li>
 
                     <li><a href="<?php echo base_url('moi'); ?>">Mới</a></li>

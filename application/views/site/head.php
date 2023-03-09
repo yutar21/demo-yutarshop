@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>Yutar Shop</title>
+<title>yutar Shop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script src="<?php echo public_url(); ?>js/jquery-3.1.1.js" type="text/javascript"></script>

@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>YutarSHOP </span>Admin</a>
+            <a class="navbar-brand" href="#"><span>LPTSHOP </span>Admin</a>
             <ul class="user-menu">
                 <li class="dropdown">
                     <a href="#" class="dropbtn" onclick="myFunction()"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <?php echo $login->name; ?> <span class="caret"></span></a>
