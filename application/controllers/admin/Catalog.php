@@ -47,7 +47,7 @@ class Catalog extends MY_Controller {
 					'created' => now()
 					);
 				if ($this->catalog_model->create($data)) {
-					$this->session->set_flashdata('message_success', 'Thêm danh mục thành công');
+					$this->session->set_flashdata('message_success', 'Thêm danh thành công');
 				}else{
 					$this->session->set_flashdata('message_fail', 'Thêm danh mục thất bại');
 				}

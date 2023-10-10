@@ -309,13 +309,12 @@
                 <div class="panel-body">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
 
-                        <form enctype="multipart/form-data" method="post" >
+                        <form enctype="multipart/form-data" method="post" onsubmit="return validateForm();">
                             <table class="table" id="order_info">
                                 <tbody>
                                     <tr>
                                         <td style="width: 100px">Họ và tên</td>
                                         <td><input style="min-width: 200px" type="text" value="<?php echo (!empty($user)) ? $user->name : ''; ?>" name="name"><?php echo form_error('name'); ?></td>
-
                                     </tr>
                                     <tr>
                                         <td>Số điện thoại</td>
@@ -409,7 +408,7 @@
                                 <div class="col-lg-5"><image style="width: 100%; height: 100%" src="<?php echo base_url(); ?>upload/van_chuyen.png" /></div>
                                 <div class="col-lg-5">Đơn vị vận chuyển<p>GHN - Giao hàng nhanh toàn quốc</p></div>
                             </div>
-                            <button style="min-width: 100px;float: right;margin-top: 50px" type="submit" class="btn btn-success">Xác nhận</button>
+                                    <button style="min-width: 100px;float: right;margin-top: 50px" type="submit" class="btn btn-success">Xác nhận</button>
                         </form>
 
                     </div>
@@ -418,3 +417,53 @@
         </div>	
     </div>
 </div>
+<script>
+function validateForm() {
+    var name = document.getElementsByName("name")[0].value;
+    var phone = document.getElementsByName("phone")[0].value;
+    var area = document.getElementsByName("area")[0].value;
+
+    // Validation for Họ và tên
+    if (name.trim() === "") {
+        alert("Họ và tên không được để trống.");
+        return false;
+    }
+
+    // Check if Họ và tên has at least 2 characters
+    if (name.length < 2) {
+        alert("Họ và tên phải có ít nhất 2 ký tự.");
+        return false;
+    }
+
+    // Allow only letters, spaces, hyphens, and apostrophes for Họ và tên
+    if (!/^[a-zA-Z\s-'’]+$/.test(name)) {
+        alert("Họ và tên chỉ được chứa chữ cái, dấu cách.");
+        return false;
+    }
+
+    // Validation for Số điện thoại
+    if (phone.trim() === "") {
+        alert("Số điện thoại không được để trống.");
+        return false;
+    }
+
+    // Check if Số điện thoại has at least 5 characters
+    if (phone.length < 4) {
+        alert("Số điện thoại phải có ít nhất 4 ký tự.");
+        return false;
+    }
+
+    // Allow only digits for Số điện thoại
+    if (!/^\d+$/.test(phone)) {
+        alert("Số điện thoại chỉ được chứa chữ số.");
+        return false;
+    }
+
+    if (area.trim() === "") {
+        alert("Địa chỉ cụ thể không được để trống.");
+        return false;
+    }
+
+    return true;  // Form submission will proceed if all validations pass
+}
+</script>

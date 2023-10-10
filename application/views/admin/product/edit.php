@@ -12,7 +12,7 @@
                 Chỉnh sửa thông tin sản phẩm
             </div>
             <div class="panel-body">
-                <form class="form-horizontal" name="" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" name="" method="post" enctype="multipart/form-data" onsubmit="return validateProductForm();">
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">Tên sản phẩm</label>
                         <div class="col-sm-5">
@@ -117,7 +117,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-5">
-                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                                                         <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                         </div>
                     </div>
                 </form>
@@ -125,3 +125,71 @@
         </div>
     </div>
 </div><!--/.row-->
+
+<script>
+function validateProductForm() {
+    var name = document.getElementsByName("name")[0].value;
+    var image = document.getElementsByName("image")[0].value;
+    var content = document.getElementsByName("content")[0].value;
+    var price = document.getElementsByName("price")[0].value;
+    var discount = document.getElementsByName("discount")[0].value;
+    var quantityFields = document.querySelectorAll('[name^="quantity_"]');
+
+    // Validation for Tên sản phẩm
+    if (name.trim() === "") {
+        alert("Tên sản phẩm không được để trống.");
+        return false;
+    }
+
+    // Allow only letters, numbers, and spaces for Tên sản phẩm
+    if (!/^[a-zA-Z0-9\s]+$/.test(name)) {
+        alert("Tên sản phẩm chỉ được chứa chữ cái, số và dấu cách.");
+        return false;
+    }
+
+    // Validation for Hình ảnh
+    if (image.trim() === "") {
+        alert("Hình ảnh không được để trống.");
+        return false;
+    }
+
+    // Check for valid image file extension
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if (!allowedExtensions.exec(image)) {
+        alert("Hình ảnh không đúng định dạng (chấp nhận: .jpg, .jpeg, .png, .gif).");
+        return false;
+    }
+        // Validation for Giá tiền
+    if (price.trim() === "" || isNaN(price)) {
+        alert("Giá tiền phải là số.");
+        return false;
+    }
+
+    // Validation for Giảm giá
+    if (discount.trim() !== "" && isNaN(discount)) {
+        alert("Giảm giá phải là số.");
+        return false;
+    }
+
+    // Validation for Chi tiết
+    if (content.trim() === "") {
+        alert("Chi tiết không được để trống.");
+        return false;
+    }
+
+    // Validation for Chi tiết số lượng
+    for (var i = 0; i < quantityFields.length; i++) {
+        var quantity = quantityFields[i].value;
+        if (quantity.trim() === "") {
+            alert("Chi tiết số lượng không được để trống.");
+            return false;
+        }
+        if (isNaN(quantity) || parseInt(quantity) < 0) {
+            alert("Chi tiết số lượng phải là số dương.");
+            return false;
+        }
+    }
+
+    return true;  // Form submission will proceed if all validations pass
+}
+</script>

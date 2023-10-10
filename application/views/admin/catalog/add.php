@@ -12,7 +12,7 @@
 			Thêm danh mục
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal" name="" method="post">
+				<form class="form-horizontal" name="" method="post" onsubmit="return validateCategoryForm();">
 				  <div class="form-group">
 				    <label for="inputEmail3" class="col-sm-2 control-label">Tên danh mục</label>
 				    <div class="col-sm-5">
@@ -55,7 +55,7 @@
 				  </div>
 				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-5">
-				      <button type="submit" class="btn btn-primary">Thêm mới</button>
+				       <button type="submit" class="btn btn-primary">Thêm mới</button>
 				    </div>
 				  </div>
 				</form>
@@ -63,3 +63,34 @@
 		</div>
 	</div>
 </div><!--/.row-->
+
+<script>
+function validateCategoryForm() {
+    var name = document.getElementsByName("name")[0].value;
+    var description = document.getElementsByName("description")[0].value;
+
+    // Validation for Tên danh mục
+    if (name.trim() === "") {
+        alert("Tên danh mục không được để trống.");
+        return false;
+    }
+
+    // Allow only letters and spaces for Tên danh mục
+    if (!/^[a-zA-Z\s]+$/.test(name)) {
+        alert("Tên danh mục chỉ được chứa chữ cái và dấu cách.");
+        return false;
+    }
+	if (name.length < 2) {
+        alert("Tên danh mục phải có ít nhất 2 ký tự.");
+        return false;
+    }
+
+    // Validation for Mô tả
+    if (description.trim() === "") {
+        alert("Mô tả không thể để trống.");
+        return false;
+    }
+
+    return true;  // Form submission will proceed if all validations pass
+}
+</script>

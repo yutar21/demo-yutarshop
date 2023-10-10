@@ -6,4 +6,4 @@ Link admin: /admin/login
 
 email: admin@gmail.com
 
-pass: 1234
+pass: 123456a
